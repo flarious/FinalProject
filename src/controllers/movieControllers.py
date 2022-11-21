@@ -1,11 +1,8 @@
 from src.logics.movieBusinessLogics import MovieBusinessLogics
 
 class MovieController:
-    def __init__():
-        print("Movie controller Initiated")
+    def searchMovies(query: str):
+        return MovieBusinessLogics.searchMovies(query)
 
-    def getMovieList():
-        return MovieBusinessLogics.getMovieList()
-
-    def getMovies(search):
-        return MovieBusinessLogics.getMovies(search)
+    def findMovie(movie_id: str):
+        return MovieBusinessLogics.findMovie(movie_id)
