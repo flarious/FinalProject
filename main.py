@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from src.controllers.movieControllers import MovieController
+from src.controllers.actorControllers import ActorController
 app = FastAPI()
 
 class Response:
@@ -31,13 +32,15 @@ def findMovie(movie_id: str):
     response = Response(200, result) if result else Response(500, None)
     return response
 
-# """
-# For page:
-#     /actorDetail
-# """
-# @app.get("/actors/{actor_id}")
-# def findActor(actor_id: str):
-#     return {"Placeholder"}
+"""
+For page:
+    /actorDetail
+"""
+@app.get("/actors/{actor_id}")
+def findActor(actor_id: int):
+    result = ActorController.findActor(actor_id)
+    response = Response(200, result) if result else Response(500, None)
+    return response
 
 # """
 # For page:
